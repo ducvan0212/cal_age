@@ -1,0 +1,63 @@
+DOB: <input type="text" name="dob" placeholder="yyyy/mm/dd"><br>
+Tinh tai ngay: <input type="text" name="cal_date" placeholder="yyyy/mm/dd"><br>
+<input type="submit" value="Tinh">
+
+<p>Chenh lech: <span id="r"></span></p>
+
+<ol>
+  <li><p>It hon 18 tuoi: <span id="1"></span></p></li>
+  <li><p>Lon hon 18, nho hon 60 tuoi: <span id="2"></span></p></li>
+  <li><p>Lon hon 60, nho hon 69 tuoi: <span id="3"></span></p></li>
+</ol>
+<script type="text/javascript">
+$("input[type='submit']").click(function() {
+  console.log("=======================");
+  
+  var calDate = new Date($("input[name='cal_date']").val());
+  var dob = new Date($("input[name='dob']").val());
+  // console.log(dob);
+  // console.log(calDate);
+  // console.log(Math.abs(dob - calDate));
+  
+  var milestone = new Date($("input[name='dob']").val());
+  milestone.setFullYear(calDate.getFullYear());
+  console.log(milestone);
+
+  var sixMonthsFromMilestone = new Date(milestone);
+  sixMonthsFromMilestone.setMonth(sixMonthsFromMilestone.getMonth() + 6)
+  console.log(sixMonthsFromMilestone);
+
+  var oneYearFromMilestone = new Date(milestone);
+  oneYearFromMilestone.setMonth(oneYearFromMilestone.getMonth() + 12)
+  console.log(oneYearFromMilestone);
+
+  var calFrom;
+  if (calDate < sixMonthsFromMilestone) {
+    calFrom = milestone;
+  } else {
+    calFrom = oneYearFromMilestone;
+  };
+  console.log(calFrom);
+
+  age = (calFrom - dob)/24/3600/1000/365;
+  $('#r').html(age);
+  if (age < 18) {
+    $('#1').html("bing bong bing bonggggggggggggggggggggg");
+    $('#2').html("");
+    $('#3').html("");
+  } else if (age < 60) {
+    $('#2').html("bing bong bing bonggggggggggggggggggggg");
+    $('#1').html("");
+    $('#3').html("");
+  } else if (age < 69) {
+    $('#3').html("bing bong bing bonggggggggggggggggggggg");
+    $('#2').html("");
+    $('#1').html("");
+  } else {
+    $('#1').html("");
+    $('#2').html("");
+    $('#3').html("");
+  };
+
+})
+</script>
