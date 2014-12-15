@@ -1,6 +1,3 @@
-@import "bootstrap-sprockets";
-@import "bootstrap";
-
 html {
   overflow-y: scroll;
 }
@@ -11,4 +8,22 @@ body {
 
 section {
   overflow: auto;
+}
+
+.center {
+  margin: 0 auto;
+}
+
+.cover {
+  width: 300px;
+  min-width: 200px;
+}
+
+.width-100 {
+  width: 100%;
+}
+
+#r {
+  font-size: 200%;
+  font-weight: bold;
 }
