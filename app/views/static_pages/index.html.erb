@@ -161,7 +161,7 @@ $(document).ready(function(){
 
     age = calFrom.getFullYear() - dob.getFullYear();
     $('#r').html(age);
-    $('.age-group').removeClass('success');
+    $('.age-group').removeClass('success hide');
     if (age <= 69) { $('#5to7').addClass("success"); };
     if (age <= 69) { $('#6').addClass("success"); };
     if (age >= 16 && age <= 60) { $('#8').addClass("success"); };
@@ -182,6 +182,8 @@ $(document).ready(function(){
     if (age <= 60 && age >= 57) { $('#16to60').addClass("success"); };
     if (age <= 60) { $('#17tondbh').addClass("success"); };
     if (age <= 60 && age >= 18) { $('#17tobmbh').addClass("success"); };
+
+    $('.success').addClass('hide');
     event.preventDefault();
   });
 });
