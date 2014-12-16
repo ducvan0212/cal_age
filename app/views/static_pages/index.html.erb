@@ -135,7 +135,7 @@
 
 <script type="text/javascript">
 $(document).ready(function(){
-  $("button[type='submit']").click(function() {
+  $("button[type='submit']").click(function(event) {
     console.log("=======================");
     var pattern = /(\d{1,2})\.(\d{1,2})\.(\d{4})/;
     var calDate = new Date($("input[name='cal_date']").val().replace(pattern, '$3/$2/$1'));
@@ -186,7 +186,7 @@ $(document).ready(function(){
     if (age <= 60 && age >= 18) { $('#17tobmbh').addClass("success"); };
 
     $('.success').addClass('hide');
-    event.preventDefault();
+    event.preventDefault ? event.preventDefault() : event.returnValue = false;
   });
 });
 </script>
