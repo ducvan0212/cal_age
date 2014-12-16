@@ -6,16 +6,17 @@
     </div>
 
     <div class="form-group row">
-      <div class="col-md-5"><label for="cal_date">Ngay tinh</label></div>
+      <div class="col-md-5"><label for="cal_date">Ngày phát hành hợp đồng</label></div>
       <div class="col-md-7"><input type="text" name="cal_date" placeholder="dd.mm.yyyy" class="form-control"></div>
     </div>
 
     <div class="form-group row">
-      <button type="submit" class="btn btn-primary col-md-12">Tinh</button>
+      <button type="submit" class="btn btn-primary col-md-12">Tính</button>
     </div>
   </form>
-  <p id="age-result">Tuoi: <span id="r"></span></p>
+  <p id="age-result">Số tuổi: <span id="r"></span></p>
 
+  <p>Các sản phẩm không thoả mãn:</p>
   <table class="table">
     <tr class="age-group" id="5to7">
       <th>R5-R7</th>
@@ -25,12 +26,12 @@
       <th>R6</th>
       <td>tuoi < 69</td>
     </tr>
-    <tr  class="age-group" id="8">
+    <tr class="age-group" id="8">
       <th>R8</th>
       <td>16 < tuoi < 60</td>
     </tr>
-    <tr class="age-group" id="10to56to60">
-      <table class="table">
+    <!-- <tr class="age-group" id="10to56to60"> -->
+      <!-- <table class="table"> -->
         <tr class="age-group" id="10to56">
           <th>R10-56</th>
           <td>tuoi < 56</td>
@@ -39,10 +40,10 @@
           <th>R10-60</th>
           <td>57 < tuoi < 60</td>
         </tr>
-      </table>
-    </tr>
-    <tr class="age-group" id="11to50to55">
-      <table class="table">
+      <!-- </table> -->
+    <!-- </tr> -->
+    <!-- <tr class="age-group" id="11to50to55"> -->
+      <!-- <table class="table"> -->
         <tr class="age-group" id="11to50">
           <th>R11-50</th>
           <td>tuoi < 51</td>
@@ -51,10 +52,10 @@
           <th>R11-55</th>
           <td>52 < tuoi < 55</td>
         </tr>
-      </table>
-    </tr>
-    <tr class="age-group" id="12to55to60">
-      <table class="table">
+      <!-- </table> -->
+    <!-- </tr> -->
+    <!-- <tr class="age-group" id="12to55to60"> -->
+      <!-- <table class="table"> -->
         <tr class="age-group" id="12to55">
           <th>R12-55</th>
           <td>tuoi < 55</td>
@@ -63,10 +64,10 @@
           <th>R12-60</th>
           <td>56 < tuoi < 60</td>
         </tr>
-      </table>
-    </tr>
-    <tr class="age-group" id="13to55to60">
-      <table class="table">
+      <!-- </table> -->
+    <!-- </tr> -->
+    <!-- <tr class="age-group" id="13to55to60"> -->
+      <!-- <table class="table"> -->
         <tr class="age-group" id="13to55">
           <th>R13-55</th>
           <td>tuoi < 55</td>
@@ -75,10 +76,10 @@
           <th>R13-60</th>
           <td>56 < tuoi < 60</td>
         </tr>
-      </table>
-    </tr>
-    <tr class="age-group" id="14to46to56to60">
-      <table class="table">
+      <!-- </table> -->
+    <!-- </tr> -->
+    <!-- <tr class="age-group" id="14to46to56to60"> -->
+      <!-- <table class="table"> -->
         <tr class="age-group" id="14to46">
           <th>R14-46</th>
           <td>18 < tuoi < 46</td>
@@ -91,10 +92,10 @@
           <th>R14-60</th>
           <td>57 < tuoi < 60</td>
         </tr>
-      </table>
-    </tr>
-    <tr class="age-group" id="15to56to60">
-      <table class="table">
+      <!-- </table> -->
+    <!-- </tr> -->
+    <!-- <tr class="age-group" id="15to56to60"> -->
+      <!-- <table class="table"> -->
         <tr class="age-group" id="15to56">
           <th>R15-56</th>
           <td>18 < tuoi < 56</td>
@@ -103,10 +104,10 @@
           <th>R15-60</th>
           <td>57 < tuoi < 60</td>
         </tr>
-      </table>
-    </tr>
-    <tr class="age-group" id="16to56to60">
-      <table class="table">
+      <!-- </table> -->
+    <!-- </tr> -->
+    <!-- <tr class="age-group" id="16to56to60"> -->
+      <!-- <table class="table"> -->
         <tr class="age-group" id="16to56">
           <th>R16-56</th>
           <td>tuoi < 56</td>
@@ -115,10 +116,10 @@
           <th>R16-60</th>
           <td>57 < tuoi < 60</td>
         </tr>
-      </table>
-    </tr>
-    <tr class="age-group" id="17">
-      <table class="table">
+      <!-- </table> -->
+    <!-- </tr> -->
+    <!-- <tr class="age-group" id="17"> -->
+      <!-- <table class="table"> -->
         <tr class="age-group" id="17tondbh">
           <th>R17-NĐBH</th>
           <td>tuoi < 60</td>
@@ -127,15 +128,15 @@
           <th>R17-BMBH</th>
           <td>18 < tuoi < 60</td>
         </tr>
-      </table>
-    </tr>
+      <!-- </table> -->
+    <!-- </tr> -->
   </table>
 </div>
 <script type="text/javascript">
 $(document).ready(function(){
   $("button[type='submit']").click(function() {
     console.log("=======================");
-    var pattern = /(\d{2})\.(\d{2})\.(\d{4})/;
+    var pattern = /(\d{1,2})\.(\d{1,2})\.(\d{4})/;
     var calDate = new Date($("input[name='cal_date']").val().replace(pattern, '$3/$2/$1'));
     var dob = new Date($("input[name='dob']").val().replace(pattern, '$3/$2/$1'));
     
