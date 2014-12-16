@@ -16,7 +16,7 @@
   </form>
   <p id="age-result">Số tuổi: <span id="r"></span></p>
 
-  <p>Các sản phẩm không thoả mãn:</p>
+  <p class="age-group">Các sản phẩm không thoả mãn:</p>
   <table class="table">
     <tr class="age-group" id="5to7">
       <th>R5-R7</th>
@@ -137,7 +137,7 @@
 $(document).ready(function(){
   $('.age-group td').addClass('hide');
   $('.age-group').addClass('hide');
-  
+
   $("button[type='submit']").click(function(event) {
     console.log("=======================");
     var pattern = /(\d{1,2})\.(\d{1,2})\.(\d{4})/;
