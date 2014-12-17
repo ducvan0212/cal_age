@@ -146,6 +146,9 @@ $(document).ready(function(){
     
     var milestone = new Date($("input[name='dob']").val().replace(pattern, '$3/$2/$1'));
     milestone.setFullYear(calDate.getFullYear());
+    if (calDate < milestone) {
+      milestone.setFullYear(calDate.getFullYear() - 1);
+    };
     console.log(milestone);
 
     var sixMonthsFromMilestone = new Date(milestone);
